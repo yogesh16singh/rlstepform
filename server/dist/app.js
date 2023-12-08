@@ -1,9 +1,18 @@
-import express from 'express';
+import express from "express";
+import cookieParser from "cookie-parser";
+import cors from "cors";
 const app = express();
-const port = 3000;
-app.get('/', (req, res) => {
-    res.send('Hello, TypeScript with Express!');
-});
-app.listen(port, () => {
-    console.log(`Server is running at port:${port}`);
-});
+app.use(express.json());
+app.use(express.urlencoded());
+app.use(express.static("public"));
+app.use(cookieParser());
+app.use(cors({
+    origin: process.env.CORS_ORIGIN,
+    credentials: true
+}));
+//routes import
+import userRouter from './routes/user.routes.js';
+//routes declaration
+app.use("/api/v1/users", userRouter);
+// http://localhost:8000/api/v1/users/register
+export { app };
