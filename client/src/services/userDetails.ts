@@ -72,6 +72,7 @@ export const getAllDetails = async (id: string | null) => {
     try {
         const response = await fetch(
             `https://stepform-vlot.onrender.com/v1/api/userdetails/user-details/${id}`,
+            //@ts-ignore
             requestOptions
         );
 
@@ -103,6 +104,7 @@ export const getAllDetailsByEmail = async (email: string | null) => {
     try {
         const response = await fetch(
             `https://stepform-vlot.onrender.com/v1/api/userdetails/user-details/email/${email}`,
+            //@ts-ignore
             requestOptions
         );
 

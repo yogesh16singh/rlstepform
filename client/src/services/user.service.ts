@@ -1,4 +1,5 @@
 import axios from 'axios';
+//@ts-ignore
 import authHeader from './auth-header';
 
 const API_URL = `https://stepform-vlot.onrender.com/api/test/`;
