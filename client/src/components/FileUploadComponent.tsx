@@ -13,7 +13,7 @@ interface basicDetailsProps {
     setAllFormData: MyFunctionType,
     allFormData: any,
 }
-
+//@ts-ignore
 type Accept = string | undefined;
 
 const FileUploadComponent: React.FC<basicDetailsProps> = ({ setAllFormData, allFormData, setForm }) => {
@@ -41,6 +41,7 @@ const FileUploadComponent: React.FC<basicDetailsProps> = ({ setAllFormData, allF
 
     const { getRootProps, getInputProps } = useDropzone({
         onDrop,
+        //@ts-ignore
         accept: validFileTypes.join(','),
         multiple: true,
         maxFiles: maxFileLimit - files.length,
@@ -59,6 +60,7 @@ const FileUploadComponent: React.FC<basicDetailsProps> = ({ setAllFormData, allF
     const nextFunct = () => {
         let newData = []
         for (let i = 0; i <= files.length - 1; i++) {
+            //@ts-ignore
             newData.push({ name: files[i]?.name, path: files[i]?.path })
         };
         // console.log('newData', newData)

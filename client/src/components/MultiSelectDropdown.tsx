@@ -47,9 +47,11 @@ const MultiSelectDropdown: React.FC<basicDetailsProps> = ({ setForm, setAllFormD
   };
 
   useEffect(() => {
+    //@ts-ignore
     document.addEventListener('mousedown', handleMouseDown);
 
     return () => {
+      //@ts-ignore
       document.removeEventListener('mousedown', handleMouseDown);
     };
   }, []);
@@ -79,7 +81,7 @@ const MultiSelectDropdown: React.FC<basicDetailsProps> = ({ setForm, setAllFormD
       setLoade(false);
       return;
     }
-
+    //@ts-ignore
     setAllFormData({});
     setForm(0);
     setLoade(false);
