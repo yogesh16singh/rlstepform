@@ -22,7 +22,7 @@ router.post("/user-details", async (req, res) => {
             options,
             state,
         } = req.body;
-        console.log(req.body);
+
         const userDetails = await userService.createUserDetails(userId, {
             name,
             email,
@@ -36,6 +36,7 @@ router.post("/user-details", async (req, res) => {
             options,
             state
         });
+        console.log(userDetails);
         res.status(201).json(userDetails);
     } catch (error: any) {
         res.status(500).json({ error: error.message });

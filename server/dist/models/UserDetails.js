@@ -42,5 +42,7 @@ const userDetailsSchema = new mongoose_1.Schema({
         },
     ],
     options: [{ type: String }],
+}, {
+    timestamps: true,
 });
 exports.UserDetailsModel = mongoose_1.default.model("UserDetails", userDetailsSchema);

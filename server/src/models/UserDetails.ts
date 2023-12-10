@@ -31,6 +31,9 @@ const userDetailsSchema: Schema = new Schema({
         },
     ],
     options: [{ type: String }],
+}, {
+    timestamps: true,
+
 });
 
 export const UserDetailsModel = mongoose.model<IUserDetails>(

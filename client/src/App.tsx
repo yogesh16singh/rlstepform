@@ -1,20 +1,16 @@
+
 import './App.css'
-import { Routes, Route, Navigate } from "react-router-dom";
-import Login from './components/Login';
-import StepForm from './components/StepForm';
-import Data from './components/Data';
-import Register from './components/Register';
+import { Outlet } from 'react-router-dom'
+
+// const apiKey = process.env.REACT_APP_MY_API_KEY;  // Retrieve the environment variable 
+// console.log('API Key:', apiKey);
+
 function App() {
 
   return (
     <>
-      <Routes>
-        <Route path="/" element={<Navigate to="/login" />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/form" element={<StepForm />} />
-        <Route path="/data" element={<Data />} />
-      </Routes>
+      {/* <Login /> */}
+      <Outlet />
     </>
   )
 }
