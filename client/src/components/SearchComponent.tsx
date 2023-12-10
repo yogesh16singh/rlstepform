@@ -23,7 +23,7 @@ const SearchComponent: React.FC<basicDetailsProps> = ({ setData }) => {
     return (
         <>
             {loade && <Loader />}
-            <div className="flex items-center mb-0 top-0">
+            <div className="flex justify-center top-0 ">
                 <div className="flex border border-blue-400 rounded">
                     <input
                         type="text"

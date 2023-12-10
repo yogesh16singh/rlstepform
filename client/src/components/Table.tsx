@@ -20,10 +20,10 @@ interface Props {
 const UserTable: React.FC<Props> = (users) => {
     const [startDate, setStartDate] = useState("2023-01-01");
     const [endDate, setEndDate] = useState("2023-12-30");
-    const handleStartDateChange = (event) => {
+    const handleStartDateChange = (event: any) => {
         setStartDate(event.target.value);
     };
-    const handleEndDateChange = (event) => {
+    const handleEndDateChange = (event: any) => {
         setEndDate(event.target.value);
     };
     console.log("staartdate", startDate);
@@ -33,12 +33,12 @@ const UserTable: React.FC<Props> = (users) => {
         <div className='end-0'>
             <input value={startDate}
                 onChange={handleStartDateChange}
-                id="statdateInput" type="date" className="mt-1 p-2 border rounded-md focus:outline-none focus:border-blue-500" />
+                id="statdateInput" type="date" className="mt-1 p-2 border cursor-pointer rounded-md focus:outline-none hover:border-blue-500" />
 
             <input
                 value={endDate}
                 onChange={handleEndDateChange}
-                id="enddateInput" type="date" className="mt-1 p-2 border rounded-md focus:outline-none focus:border-blue-500" />
+                id="enddateInput" type="date" className="mt-1 p-2 border cursor-pointer rounded-md focus:outline-none hover:border-blue-500" />
         </div>
         <table className="min-w-full bg-white border border-gray-300">
             <thead>
@@ -66,7 +66,7 @@ const UserTable: React.FC<Props> = (users) => {
                     map((user: any, index: any) => {
                         let date = new Date(user.createdAt);
                         console.log("dte", typeof (date))
-                        return <tr key={index}>
+                        return <tr key={index} className='border hover:border-red-400'>
                             <td className="border-b p-2 dark:text-black">{user.name}</td>
                             <td className="border-b p-2 dark:text-black">{user.email}</td>
                             <td className="border-b p-2 dark:text-black">{user.phoneNumber}</td>

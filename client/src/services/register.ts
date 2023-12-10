@@ -21,7 +21,7 @@ export const register = async (
 
     try {
         const response = await fetch(
-            "http://localhost:8000/v1/api/users/register",
+            `https://stepform-vlot.onrender.com/v1/api/users/register`,
             requestOptions
         );
 

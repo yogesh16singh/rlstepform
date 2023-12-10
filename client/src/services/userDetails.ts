@@ -41,7 +41,7 @@ export const basicDetails = async (
 
     try {
         const response = await fetch(
-            `http://localhost:8000/v1/api/userdetails/user-details`,
+            `https://stepform-vlot.onrender.com/v1/api/userdetails/user-details`,
             requestOptions
         );
 
@@ -71,7 +71,7 @@ export const getAllDetails = async (id: string | null) => {
 
     try {
         const response = await fetch(
-            `http://localhost:8000/v1/api/userdetails/user-details/${id}`,
+            `https://stepform-vlot.onrender.com/v1/api/userdetails/user-details/${id}`,
             requestOptions
         );
 
@@ -102,7 +102,7 @@ export const getAllDetailsByEmail = async (email: string | null) => {
 
     try {
         const response = await fetch(
-            `http://localhost:8000/v1/api/userdetails/user-details/email/${email}`,
+            `https://stepform-vlot.onrender.com/v1/api/userdetails/user-details/email/${email}`,
             requestOptions
         );
 

@@ -4,6 +4,7 @@ import UserTable from '../components/Table';
 import { useNavigate } from 'react-router-dom';
 import SearchComponent from '../components/SearchComponent';
 import Loader from '../components/Loader';
+import Navbar from '../components/Navbar';
 
 function Home() {
     const navigate: any = useNavigate();
@@ -13,6 +14,7 @@ function Home() {
 
     useEffect(() => {
         // console.log('111');
+
         (async () => {
             const detailsData = await getAllDetails(id);
             console.log('details', detailsData);
@@ -24,14 +26,19 @@ function Home() {
 
     // console.log('data', data);
     return (
-        <div>
+        <div className='top-0'>
+            <Navbar></Navbar>
             {loade && <Loader />}
-            <div className='flex flex-wrap justify-center gap-4 '>
+            <div className='flex md:justify-center flex-wrap flex-col lg:flex-row gap-2 '>
                 <SearchComponent setData={setData} />
-                <button onClick={() => navigate('/userdetails')} className="my-4 bg-blue-800 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mb-4" type="button">
-                    Add More Details +
-                </button>
-                <h2 className='my-4 bg-blue-800  text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline '>Result Based On Submission Date </h2>
+                <div className='flex justify-center '>
+                    <button onClick={() => navigate('/userdetails')} className=" flex justify-center  my-4 bg-blue-800 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded focus:outline-none focus:shadow-outline mb-4" type="button">
+                        Add More Details +
+                    </button>
+                </div>
+                <div className='flex justify-center '>
+                    <h2 className='flex justify-center my-4 bg-blue-800  text-white font-bold py-1 px-4 rounded focus:outline-none focus:shadow-outline '>Result Based On Submission Date </h2>
+                </div>
             </div>
 
             <UserTable users={data} />

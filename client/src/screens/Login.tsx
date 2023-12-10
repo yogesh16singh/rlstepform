@@ -18,8 +18,8 @@ function Login() {
     const [emailerror, setEmailerror] = useState<boolean>(false)
     const [passworderror, setPassworderror] = useState<boolean>(false);
     const [formData, setFormData] = useState<formStateProps>({
-        email: '',
-        password: ''
+        email: 'test@gmail.com',
+        password: 'test'
     });
     const [loader, setLoader] = useState<boolean>(false);
     const [errorMessage, setErrorMessage] = useState<string>('');
@@ -78,6 +78,9 @@ function Login() {
                     <p className="text-red-500 text-xs italic mt-2 font-bold">{errorMessage}</p>
                 </form>
                 <p>Dont have account? <Link to="/registration">Registration</Link></p>
+            </div>
+            <div>
+                <p className="text-sm text-red-800 border-black-500 border-2">First API call take some time as backend is hosted on Free service</p>
             </div>
         </>
     )

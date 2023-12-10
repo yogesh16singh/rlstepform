@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import App from './App.tsx'
 import './index.css'
+import './App.css'
 import Home from './screens/Home.tsx';
 import Login from './screens/Login.tsx';
 import Registration from './screens/Registration.tsx';
