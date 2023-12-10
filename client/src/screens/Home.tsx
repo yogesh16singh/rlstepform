@@ -30,7 +30,7 @@ function Home() {
             <Navbar></Navbar>
             {loade && <Loader />}
             <div className='flex md:justify-center flex-wrap flex-col lg:flex-row gap-2 '>
-                <SearchComponent setData={setData} />
+                <SearchComponent setData={setData} idata={data} />
                 <div className='flex justify-center '>
                     <button onClick={() => navigate('/userdetails')} className=" flex justify-center  my-4 bg-blue-800 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded focus:outline-none focus:shadow-outline mb-4" type="button">
                         Add More Details +
@@ -41,7 +41,7 @@ function Home() {
                 </div>
             </div>
 
-            <UserTable users={data} />
+            {data.length > 0 ? <UserTable users={data} /> : <div></div>}
         </div>
     )
 }
